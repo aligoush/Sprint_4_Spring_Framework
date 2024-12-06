@@ -13,5 +13,5 @@ public class Fruit {
     @Column(name = "fruit_name", nullable = false, unique = true)
     private String name;
     @Column(name = "quantity_kg", nullable = false)
-    private int quantityKg;
+    private double quantityKg;
 }

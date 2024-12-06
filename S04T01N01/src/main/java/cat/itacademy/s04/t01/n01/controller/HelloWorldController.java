@@ -1,6 +1,5 @@
 package cat.itacademy.s04.t01.n01.controller;
 
-import ch.qos.logback.core.util.StringUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +15,6 @@ public class HelloWorldController {
 
     @GetMapping(value = {"/HelloWorld2","/HelloWorld2/{name}"})
     private String hello2(@PathVariable(required = false) String name){
-
-        if(!StringUtil.isNullOrEmpty(name)){
-            return "Hello, " + name + ". You are running a Maven project.";
-        } else {
-            return "Hello, UNKNOWN! You are running a Maven project.";
-        }
+        return name==null? "Hello, UNKNOWN! You are running a Maven project.": "Hello, " + name + ". You are running a Maven project.";
     }
 }
